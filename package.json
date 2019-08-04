@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "build": "webpack -p",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.10",
