@@ -4,8 +4,7 @@ import { withInfo } from 'storybook-addon-vue-info';
 import '@storybook/addon-console';
 
 // automatically import all files ending in *.stories.js
-const req = require.context("../src", true, /stories\.js$/);
-const loadStories = req.keys().forEach(req);
+const loadStories = require.context("../src", true, /stories\.js$/);
 addDecorator(withInfo);
 addDecorator(withKnobs);
 configure(loadStories, module);
