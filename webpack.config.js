@@ -37,7 +37,8 @@ module.exports = {
                 $compiler: 'webpack';
                 @import "${path.resolve(__dirname, "./src/stylesheets/reset.scss")}";
                 @import "${path.resolve(__dirname, "./src/stylesheets/application.scss")}";
-              `
+              `,
+              sourceMap: true
             }
           }
         ]
