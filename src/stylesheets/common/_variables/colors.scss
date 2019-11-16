@@ -1,0 +1,49 @@
+:root {
+  /* monochrome */
+  --color-mono-1: #111111;
+  --color-mono-2: #333333;
+  --color-mono-3: #666666;
+  --color-mono-4: #999999;
+  --color-mono-5: #cccccc;
+  --color-mono-6: #dddddd;
+  --color-mono-7: #e8e8e8;
+  --color-mono-8: #eeeeee;
+  --color-mono-9: #f2f2f2;
+  --color-mono-a: #f5f5f5;
+  --color-mono-b: #f8f8f8;
+  --color-mono-c: #ffffff;
+
+  /* color */
+  --color-red: #d72022;
+  --color-orange: #d27e3f;
+  --color-yellow: #e3af49;
+  --color-sushi: #7caa2f;
+  --color-green: #3a9a59;
+  --color-turquoise: #52c3c4;
+  --color-blue: #358ed7;
+  --color-steel-blue: #4183ad;
+  --color-dark-blue: #2a3d95;
+  --color-navy: #166eb6;
+  --color-purple: #9357aa;
+  --color-pink: #ec6276;
+  --color-gold: #b7a978;
+
+  /* 意味を持つ色 */
+  --color-rate: #ffb100;
+  --color-key: var(--color-gold);
+  --color-favorite: var(--color-pink);
+  --color-primary: var(--color-green);
+
+  /* UI */
+  --color-placeholder: var(--color-mono-5);
+  --color-text-link: var(--color-blue);
+  --color-text-link--hover: var(--color-navy);
+  --color-button-bg-normal: var(--color-mono-9);
+  --color-button-bg-normal--hover: var(--color-mono-7);
+  --color-button-bg-primary: var(--color-primary);
+  --color-button-bg-primary--hover: #c51618;
+  --color-button-bg-special: var(--color-key);
+  --color-button-bg-special--hover: #a69866;
+  --color-button-bg-black: var(--color-mono-2);
+  --color-button-bg-black--hover: var(--color-mono-1);
+}

@@ -28,9 +28,17 @@ module.exports = {
         test: /\.s?css$/,
         use: [
           { loader: 'vue-style-loader' },
-          { loader: 'css-loader' },
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader',
           {
             loader: 'sass-loader',
+            options: {
+              prependData: `
+                $compiler: 'webpack';
+                @import "${path.resolve(__dirname, "./src/stylesheets/reset.scss")}";
+                @import "${path.resolve(__dirname, "./src/stylesheets/application.scss")}";
+              `
+            }
           }
         ]
       },
