@@ -135,11 +135,11 @@ export default {
     height: 100%;
     padding: 0 14px;
     font-size: 14px;
-    color:  #111111;
+    color:  var(--color-mono-1);
     letter-spacing: .4px;
     cursor: pointer;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
+    background-color: var(--color-mono-c);
+    border: 1px solid var(--color-mono-5);
     border-radius: 3px;
     outline: none;
     transition: .3s;
@@ -150,30 +150,30 @@ export default {
     }
 
     &:focus {
-      border-color: #333333;
+      border-color: var(--color-mono-2);
       box-shadow: 0 2px 5px 0 rgba(48, 45, 30, .1);
     }
 
     &:disabled {
-      color: #999999;
+      color: var(--color-mono-4);
       cursor: not-allowed;
-      background-color:  #e8e8e8;
-      border-color: #cccccc;
+      background-color: var(--color-mono-7);
+      border-color: var(--color-mono-5);
       + .a-select__caret{
-        color: #999999;
+        color: var(--color-mono-4);
       }
     }
 
     &[aria-invalid]{
-      border-color: red;
+      border-color: var(--color-red);
     }
 
     &::placeholder {
-      color: #999999;
+      color: var(--color-mono-4);
     }
 
     &--placeholder {
-      color: #cccccc;;
+      color: var(--color-mono-5);
     }
 
     &::-ms-clear {
@@ -186,7 +186,7 @@ export default {
 
     &:-moz-focusring {
       color: transparent;
-      text-shadow: 0 0 0  #111111;
+      text-shadow: 0 0 0  var(--color-mono-1);
       transition: .3s border-color, .3s box-shadow;
     }
 
@@ -208,7 +208,7 @@ export default {
   }
 
   &__option{
-    color:  #111111;
+    color:  var(--color-mono-1);
   }
 
   &__caret {
@@ -220,7 +220,7 @@ export default {
     align-items: center;
     width: 8px;
     font-size: 10px;
-    color: #333333;
+    color: var(--color-mono-3);
     transform: scale(.8);
   }
 }

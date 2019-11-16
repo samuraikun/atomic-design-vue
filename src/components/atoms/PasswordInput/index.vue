@@ -146,7 +146,7 @@ export default {
     justify-content: center;
     width: 50px;
     font-size: 20px;
-    color: #666666;
+    color: var(--color-mono-3);
     cursor: pointer;
     &-checkbox {
       display: none;

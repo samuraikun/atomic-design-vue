@@ -125,26 +125,26 @@ export default {
   font-size: 14px;
   color: var(--color-mono-1);
   letter-spacing: .4px;
-  background-color: #ffffff;
-  border: solid 1px #cccccc;
+  background-color: var(--color-mono-c);
+  border: solid 1px var(--color-mono-5);
   border-radius: 3px;
   outline: none;
   transition: .3s;
 
   &:focus {
-    border-color: #333333;
+    border-color: var(--color-mono-2);
     box-shadow: 0 2px 5px 0 rgba(48, 45, 30, .1);
   }
 
   &:disabled {
-    color: #999999;
+    color: var(--color-mono-4);
     cursor: not-allowed;
-    background-color: #f8f8f8;
-    border-color: #eeeeee;
+    background-color: var(--color-mono-b);
+    border-color: var(--color-mono-8);
   }
 
   &::placeholder {
-    color: #999999;
+    color: var(--color-mono-4);
   }
 
   &::-ms-clear {

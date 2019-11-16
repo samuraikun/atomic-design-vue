@@ -97,7 +97,7 @@ export default {
   &__title{
     margin-left: 5px;
     font-size: 14px;
-    color: black;
+    color: var(--color-mono-1);
     user-select: none;
   }
 }
