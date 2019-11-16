@@ -104,23 +104,23 @@ export default {
   }
 
   &--primary {
-    color: #ffffff;
-    background-color: #111111;
+    color: var(--color-mono-c);
+    background-color: var(--color-mono-1);
 
     &:hover,
     &:active{
-      background-color: #166eb6;
+      background-color: var(--color-navy);
     }
   }
 
   &--normal {
-    color: #333333;
-    background-color: #f2f2f2;
+    color: var(--color-mono-2);
+    background-color: var(--color-mono-9);
 
     &:hover,
     &:active{
-      color: #111111;
-      background-color: #e8e8e8;
+      color: var(--color-mono-1);
+      background-color: var(--color-mono-7);
     }
   }
 
