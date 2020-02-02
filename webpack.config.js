@@ -48,6 +48,32 @@ module.exports = {
         use: [
           { loader: 'pug-plain-loader' }
         ]  
+      },
+      // image のローダー設定
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        include: [
+          path.resolve(__dirname, './src/images')
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /.(svg|woff|woff2|ttf|eot)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          }
+        ]
       }
     ]  
   },

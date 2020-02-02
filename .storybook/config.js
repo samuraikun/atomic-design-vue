@@ -9,7 +9,9 @@ import {
   faEyeSlash,
   faCaretDown,
   faCheck,
-  faAsterisk
+  faAsterisk,
+  faCamera,
+  faUser
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -18,7 +20,9 @@ library.add(
   faEyeSlash,
   faCaretDown,
   faCheck,
-  faAsterisk
+  faAsterisk,
+  faCamera,
+  faUser
 )
 
 Vue.component('v-icon', FontAwesomeIcon)
