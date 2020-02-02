@@ -7,14 +7,16 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faEye,
   faEyeSlash,
-  faCaretDown
+  faCaretDown,
+  faCheck
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(
   faEye,
   faEyeSlash,
-  faCaretDown
+  faCaretDown,
+  faCheck
 )
 
 Vue.component('v-icon', FontAwesomeIcon)
