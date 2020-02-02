@@ -8,7 +8,8 @@ import {
   faEye,
   faEyeSlash,
   faCaretDown,
-  faCheck
+  faCheck,
+  faAsterisk
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -16,7 +17,8 @@ library.add(
   faEye,
   faEyeSlash,
   faCaretDown,
-  faCheck
+  faCheck,
+  faAsterisk
 )
 
 Vue.component('v-icon', FontAwesomeIcon)
