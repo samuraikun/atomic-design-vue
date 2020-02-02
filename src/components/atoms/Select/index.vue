@@ -3,8 +3,7 @@
   select.a-select__select(v-model="value" ref="select" :class="[sizeClass, placeholderClass]" :required="required" :disabled="disabled" :autocomplete="autocomplete" @blur="onBlur" @change="onChange")
     option.a-select__option(value="") {{ placeholderText }}
     option.a-select__option(v-for='option in options' :value='optionValue(option)') {{ optionLabel(option) }}
-  v-icon(icon='caret-down')
-
+  v-icon.a-select__caret(icon='caret-down')
 </template>
 
 <script>
@@ -213,13 +212,12 @@ export default {
 
   &__caret {
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 16px;
     bottom: 0;
     display: flex;
     align-items: center;
-    width: 8px;
-    font-size: 10px;
+    font-size: 20px;
     color: var(--color-mono-3);
     transform: scale(.8);
   }
