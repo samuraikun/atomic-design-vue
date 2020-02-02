@@ -14,6 +14,7 @@ import {
   faUser
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueThinModal from 'vue-thin-modal'
 
 library.add(
   faEye,
@@ -25,6 +26,7 @@ library.add(
   faUser
 )
 
+Vue.use(VueThinModal);
 Vue.component('v-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
