@@ -1,34 +1,47 @@
-import { storiesOf } from '@storybook/vue';
-import { action } from '@storybook/addon-actions';
-import { select, boolean, text } from '@storybook/addon-knobs';
-import Button from './index.vue';
+import { action } from '@storybook/addon-actions'
+import Button from './index.vue'
 
-storiesOf('atoms/Button', module)
-  .add('default', () => {
-    return {
-      components: { Button },
-      data() {
-        return {
-          title: text('title', 'Buttonやで！'),
-          type: select('type', ['submit', 'button', 'reset']),
-          size: select('size', ['default', 'm', 'l']),
-          color: select('color', ['primary', 'normal'], 'normal'),
-          disabled: boolean('diabled', false)
-        }
-      },
-      template: `
-        <Button
-          :title='title'
-          :type='type'
-          :size='size'
-          :color='color'
-          :disabled='disabled'
-          @click='onClick'
-        >
-        </Button>
-      `,
-      methods: {
-        onClick: action('clicked!')
-      }
-    }
-  }, { info: { summary: 'Atom Button' } })
+export default {
+  component: Button,
+  title: 'Atoms/Button',
+  parameters: {
+    notes: `
+      ## Description
+      ### Default
+      クリック時にdisabledにする。二重送信防止対応。
+      ### Link Tag
+      ':href'を指定していると自動的にaタグになる。
+    `,
+  },
+  argTypes: {
+    type: { control: { type: 'select', options: ['submit', 'button', 'reset'] } },
+    size: { control: { type: 'select', options: ['default', 's', 'm', 'l']    } },
+    color: { control: { type: 'select', options: ['special', 'primary', 'black', 'border', 'normal', 'blue', 'blue-border'] } },
+    href: { control: { type: 'text'} },
+    disabled: { control: { type: 'boolaen', options: false} },
+  },
+}
+
+const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Button },
+  template: '<Button v-bind="$props" @click="onClick" />',
+  methods: {
+    onClick: action('Clicked'),
+  },
+})
+
+export const normal = Template.bind({})
+normal.storyName = 'Default'
+normal.args = {
+  title: 'Default Button',
+  color: 'primary',
+}
+
+export const link = Template.bind({})
+link.storyName = 'Link Tag'
+link.args = {
+  title: 'Default Button',
+  color: 'blue',
+  href: 'https://github.com/samuraikun',
+}

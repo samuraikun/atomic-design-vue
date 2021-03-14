@@ -1,50 +1,44 @@
-import { storiesOf } from '@storybook/vue';
-import { action } from '@storybook/addon-actions';
-import { select, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions'
+import UserIconInput from './index.vue'
+import sampleImage from '../../../images/sample-photo.png'
 
-import UserIconInput from './index.vue';
-import sampleImage from '../../../images/sample-photo.png';
+export default {
+  component: UserIconInput,
+  title: 'Molecules/UserIconInput',
+  parameters: {
+    notes: `
+      ## Description
+      ### Default
+      ユーザアイコン登録用のfile inputコンポーネント<br>サムネイルはクライアント側でbase64データを作っているのでサーバリクエストはしていない
+      ### srcを書き換え
+      ユーザアイコン登録用のfile inputコンポーネント<br>サムネイルはクライアント側でbase64データを作っているのでサーバリクエストはしていない
+    `
+  },
+  argTypes: {
+    src: { control: { type: 'text' } },
+    size: { control: { type: 'select', options: ['20', '24', '28', '32', '36', '40', '60', '90', '100'] } }
+  }
+}
 
-storiesOf('molecules/UserIconInput', module)
-.add('デフォルト画像', () => {
-  return {
-    components: { UserIconInput },
-    data() {
-      return {
-        src: text('初期表示に使う画像データ', sampleImage),
-        size: select('画像サイズ', ['20', '24', '28', '32', '36', '40', '60', '90', '100'], '100')
-      }
-    },
-    template: '<UserIconInput :src="src" :size="size" @change="onChange"/>',
-    propsDescription:{
-      UserIconInput: {
-        src: '初期表示に使う画像データ',
-        size: '画像サイズ'
-      }
-    },
-    methods: {
-      onChange: action('onChange')
-    }
-  };
-}, { info: { summary: 'ユーザアイコン登録用のfile inputコンポーネント<br>サムネイルはクライアント側でbase64データを作っているのでサーバリクエストはしていない' } })
-.add('srcを書き換え', () => {
-  return {
-    components: { UserIconInput },
-    data() {
-      return {
-        src: text('初期表示に使う画像データ', 'https://randomuser.me/api/portraits/women/60.jpg'),
-        size: select('画像サイズ', ['20', '24', '28', '32', '36', '40', '60', '90', '100'], '100')
-      }
-    },
-    template: '<UserIconInput :src="src" :size="size" @change="onChange"/>',
-    propsDescription:{
-      UserIconInput: {
-        src: '初期表示に使う画像データ',
-        size: '画像サイズ'
-      }
-    },
-    methods: {
-      onChange: action('onChange')
-    }
-  };
-}, { info: { summary: 'ユーザアイコン登録用のfile inputコンポーネント<br>サムネイルはクライアント側でbase64データを作っているのでサーバリクエストはしていない' } });
+const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { UserIconInput },
+  template: '<UserIconInput v-bind="$props" @change="onChange"/>',
+  methods: {
+    onChange: action('onChange')
+  },
+})
+
+export const normal = Template.bind({})
+normal.storyName = 'Default'
+normal.args = {
+  src: sampleImage,
+  size: '100'
+}
+
+export const propsSrc = Template.bind({})
+normal.storyName = 'props src'
+normal.args = {
+  src: 'https://randomuser.me/api/portraits/women/60.jpg',
+  size: '100'
+}

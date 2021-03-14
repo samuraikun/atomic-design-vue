@@ -1,7 +1,4 @@
-import { configure, addDecorator } from '@storybook/vue';
-import { withKnobs } from '@storybook/addon-knobs';
-import { withInfo } from 'storybook-addon-vue-info';
-import '@storybook/addon-console';
+import { configure } from '@storybook/vue';
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -32,6 +29,4 @@ Vue.config.productionTip = false
 
 // automatically import all files ending in *.stories.js
 const loadStories = require.context("../src", true, /stories\.js$/);
-addDecorator(withInfo);
-addDecorator(withKnobs);
 configure(loadStories, module);
